@@ -1,62 +1,48 @@
-const readline = require('readline');
+// prompt 1
+let nome = prompt("Qual o seu nome");
+let idade = Number(prompt("Qual é sua idade?"));
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+let mensagem = `Olá, ${nome}! Que legal que você tem ${idade} anos.`;
 
-function ask(question) {
-  return new Promise((resolve) => {
-    rl.question(question, resolve);
-  });
-}
+alert(mensagem);
+console.log(mensagem);
 
-async function main() {
-  // prompt 1
-  let nome = await ask("Qual o seu nome");
-  let idade = Number(await ask("Qual é sua idade?"));
+//prompt 2
+let num = Number(prompt("Diga um número"));
 
-  let mensagem = `Olá, ${nome}! Que legal que você tem ${idade} anos.`;
+let numDobro = num+num
 
-  console.log(mensagem);
+let mensagem2 = `O dobro do número é: ${numDobro}`;
 
-  //prompt 2
-  let num = Number(await ask("Diga um número"));
+alert(mensagem2);
+console.log(mensagem2);
 
-  let numDobro = num + num;
 
-  let mensagem2 = `O dobro do número é: ${numDobro}`;
+//prompt 3
+let num3 = Number(prompt("Diga um número"));
 
-  console.log(mensagem2);
+let num4 = Number(prompt("Diga outro número"));
 
-  //prompt 3
-  let num3 = Number(await ask("Diga um número"));
+let numFinal = num3+num4
 
-  let num4 = Number(await ask("Diga outro número"));
+let mensagem3 = `A soma dos números é: ${numFinal}`;
 
-  let numFinal = num3 + num4;
+alert(mensagem3);
+console.log(numFinal);
 
-  let mensagem3 = `A soma dos números é: ${numFinal}`;
+//prompt 4
+let numero = Number(prompt("Digite um número para saber se é par:"));
 
-  console.log(mensagem3);
-
-  //prompt 4
-  let numero = Number(await ask("Digite um número para saber se é par:"));
-
-  if (numero % 2 === 0) {
+if (numero % 2 === 0) {
     console.log("O número é Par");
-  } else {
+} else {
     console.log("O número é Ímpar");
-  }
-
-  let mensagem4 = `O número ${numero} é ${numero % 2 === 0 ? "Par" : "Ímpar"}`;
-
-  console.log(mensagem4);
-
-  rl.close();
 }
 
-main();
+let mensagem4 = `O número ${numero} é ${numero % 2 === 0 ? "Par" : "Ímpar"}`;
+
+alert(mensagem4);
+console.log(mensagem4);
 
 
 
